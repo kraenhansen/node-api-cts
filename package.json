@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "fetch-node-tests": "node ./tools/fetch-nodejs-tests-and-docs.ts main"
+    "fetch-node-tests": "node ./tools/fetch-nodejs-tests-and-docs.ts main",
+    "node:test": "node --test ./implementors/node/run-tests.ts"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
