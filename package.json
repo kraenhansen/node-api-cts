@@ -6,10 +6,12 @@
   "scripts": {
     "type-check": "tsc --noEmit --project tools && tsc --noEmit --project tests && tsc --noEmit --project implementors/node",
     "fetch-node-tests": "node ./tools/fetch-nodejs-tests-and-docs.ts main",
+    "lint": "eslint",
     "node:test": "node --test ./implementors/node/run-tests.ts"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
     "typescript": "^5.9.3"
   }
 }
