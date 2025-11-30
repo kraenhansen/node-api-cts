@@ -16,3 +16,4 @@ Node-API Conformance Test Suite: A pure ECMAScript test suite for Node-API imple
 - Port existing tests from `nodejs/node/test/js-native-api` into `tests/engine/` and `nodejs/node/test/node-api` into `tests/runtime/`, removing dependencies on Node.js runtime APIs while preserving test coverage
 - Structure tests for easy integration by external implementors
 - Consider following patterns from [web-platform-tests](https://web-platform-tests.org/) and [WebGPU CTS](https://github.com/gpuweb/cts) projects where applicable.
+- We're using CMake instead of node-gyp: Transform any binding.gyp file into a CMakeLists.txt file with a call to the `add_node_api_cts_addon` function.
