@@ -5,11 +5,18 @@ import { test, type TestContext } from "node:test";
 
 const ROOT_PATH = path.resolve(import.meta.dirname, "..", "..");
 const TESTS_ROOT_PATH = path.join(ROOT_PATH, "tests");
+
 const ASSERT_MODULE_PATH = path.join(
   ROOT_PATH,
   "implementors",
   "node",
   "assert.js"
+);
+const LOAD_ADDON_MODULE_PATH = path.join(
+  ROOT_PATH,
+  "implementors",
+  "node",
+  "load-addon.js"
 );
 
 async function listDirectoryEntries(dir: string) {
@@ -36,6 +43,8 @@ function runFileInSubprocess(filePath: string): Promise<void> {
     const child = spawn(process.execPath, [
       "--import",
       ASSERT_MODULE_PATH,
+      "--import",
+      LOAD_ADDON_MODULE_PATH,
       filePath,
     ]);
 

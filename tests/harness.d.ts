@@ -13,3 +13,8 @@ declare interface Assert {
 }
 
 declare const assert: Assert;
+
+/**
+ * Loads an addon by filename (excluding any .node extension)
+ */
+declare function loadAddon(addonFileName: string): unknown;
