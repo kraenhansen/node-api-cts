@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "type-check": "tsc --noEmit --project tools && tsc --noEmit --project tests && tsc --noEmit --project implementors/node",
     "fetch-node-tests": "node ./tools/fetch-nodejs-tests-and-docs.ts main",
     "node:test": "node --test ./implementors/node/run-tests.ts"
   },
