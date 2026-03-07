@@ -28,6 +28,12 @@ const GC_MODULE_PATH = path.join(
   "node",
   "gc.js"
 );
+const MUST_CALL_MODULE_PATH = path.join(
+  ROOT_PATH,
+  "implementors",
+  "node",
+  "must-call.js"
+);
 
 export function listDirectoryEntries(dir: string) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -64,6 +70,8 @@ export function runFileInSubprocess(
         "file://" + LOAD_ADDON_MODULE_PATH,
         "--import",
         "file://" + GC_MODULE_PATH,
+        "--import",
+        "file://" + MUST_CALL_MODULE_PATH,
         filePath,
       ],
       { cwd }
